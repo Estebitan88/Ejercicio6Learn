@@ -1,0 +1,46 @@
+<div>
+  <div>
+    <h2>Notas y Materias</h2>
+  </div>
+  <ul>
+    <li>
+      <h4>id Materia</h4>
+      <p>{{ course.id }}</p>
+    </li>
+    <li>
+      <h4>Nombre de la materia</h4>
+      <p>{{ course.name }}</p>
+    </li>
+  </ul>
+
+  <div>
+    <h3>NOTAS</h3>
+  </div>
+  <div>
+    <table>
+      <thead>
+        <th>ID</th>
+        <th>IDENTIFICACION</th>
+        <th>NOMBRE</th>
+        <th>APELLIDO</th>
+      </thead>
+      <tbody>
+        @for (item of course.students; track $index) {
+        <tr>
+          <td>{{ item.id }}</td>
+
+          <td>{{ item.identification }}</td>
+          <td>{{ item.name }}</td>
+
+          <td></td>
+
+          {{
+            item.surname
+          }}
+          <td></td>
+        </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</div>
