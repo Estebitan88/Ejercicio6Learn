@@ -1,46 +1,46 @@
-<div>
-  <div>
-    <h2>Notas y Materias</h2>
-  </div>
-  <ul>
-    <li>
-      <h4>id Materia</h4>
-      <p>{{ course.id }}</p>
-    </li>
-    <li>
-      <h4>Nombre de la materia</h4>
-      <p>{{ course.name }}</p>
-    </li>
-  </ul>
+<div class="container">
+  <div class="card my-5">
+    <div class="card-header text-center">
+      <h2>MATERIA</h2>
+    </div>
 
-  <div>
-    <h3>NOTAS</h3>
-  </div>
-  <div>
-    <table>
-      <thead>
-        <th>ID</th>
-        <th>IDENTIFICACION</th>
-        <th>NOMBRE</th>
-        <th>APELLIDO</th>
-      </thead>
-      <tbody>
-        @for (item of course.students; track $index) {
-        <tr>
-          <td>{{ item.id }}</td>
+    <ul class="list-group">
+      <li class="list-group-item">
+        <h4>id Materia</h4>
+        <p>{{ course.id }}</p>
+      </li>
+      <li class="list-group-item">
+        <h4>Nombre de la materia</h4>
+        <p>{{ course.name }}</p>
+      </li>
+    </ul>
+    <div class="card my-4">
+      <div class="card-header text-center">
+        <h3>ESTUDIANTES</h3>
+      </div>
+      <div>
+        <table class="table table-striped">
+          <thead>
+            <th>ID</th>
+            <th>IDENTIFICACION</th>
+            <th>NOMBRE</th>
+            <th>APELLIDO</th>
+          </thead>
+          <tbody>
+            @for (item of course.students; track $index) {
+            <tr>
+              <td>{{ item.id }}</td>
+              <td>{{ item.identification }}</td>
+              <td>{{ item.name }}</td>
 
-          <td>{{ item.identification }}</td>
-          <td>{{ item.name }}</td>
-
-          <td></td>
-
-          {{
-            item.surname
-          }}
-          <td></td>
-        </tr>
-        }
-      </tbody>
-    </table>
+              <td>
+                {{ item.surname }}
+              </td>
+            </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+    </div>
   </div>
 </div>
